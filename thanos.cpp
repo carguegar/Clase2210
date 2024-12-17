@@ -27,8 +27,6 @@ int main () {
 				pos_peter--;
 			}
 			num_personas--;
-			cout << "muere la pos " << j << " stark esta en " << pos_stark << " que esta " << stark_muerto << " y peter esta en " << pos_peter << " que esta " << peter_muerto << " quedan personas " << num_personas << " y tengo que matar a " << num_muertes << endl;
-
 		}
 		if (stark_muerto && peter_muerto == false){
 			cout << "No quiero irme, Peter!" << endl;
