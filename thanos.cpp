@@ -3,34 +3,40 @@ using namespace std;
 
 int main () {
 	int num_personas, num_casos, num_muertes, num_saltos, pos_stark, pos_peter;
-	bool stark_muerto = false, peter_muerto = false;
+	bool stark_muerto, peter_muerto, bucle_mortal;
 
 	cin >> num_casos;
-	cin >> num_personas >> pos_stark >> pos_peter >> num_saltos;
-
-	if (num_personas % 2 == 0){
-		num_muertes = num_personas / 2;
-	}else {
-		num_muertes = num_personas / 2 +1;
-	}
-	for (int i = 0; i < num_muertes; i++){
-		for (int j = num_saltos + 1; ; j += num_saltos + 1){//posición que mato
+	for (int i = 0; i < num_casos; i++){
+		cin >> num_personas >> pos_stark >> pos_peter >> num_saltos;
+		num_muertes = num_personas / 2 + 1;
+		stark_muerto = false;
+		peter_muerto = false;
+		for (int j = num_saltos + 1; num_personas >= num_muertes; j += num_saltos){//posición que mato
 			if (j > num_personas){
 				j = j - num_personas;
-			}else (if j == pos_stark){
+			}if (j == pos_stark){
 				stark_muerto = true;
-			}if (j == pos_peter){
+			}
+			if (j == pos_peter){
 				peter_muerto = true;
 			}
+			if (pos_stark > j){
+				pos_stark--;
+			}
+			if (pos_peter > j){
+				pos_peter--;
+			}
+			num_personas--;
+			cout << "muere la pos " << j << " stark esta en " << pos_stark << " que esta " << stark_muerto << " y peter esta en " << pos_peter << " que esta " << peter_muerto << " quedan personas " << num_personas << " y tengo que matar a " << num_muertes << endl;
 
 		}
-	}
-	if (stark_muerto && peter_muerto == false){
-		cout << "No quiero irme, Peter!" << endl;
+		if (stark_muerto && peter_muerto == false){
+			cout << "No quiero irme, Peter!" << endl;
 			
-	}else if (peter_muerto && stark_muerto == false){
-		cout << "No quiero irme, Sr. Stark!"
-	}else if ( (peter_muerto && stark_muerto) || (peter_muerto == false && stark_muerto == false) ){
-		cout << "No hay abrazo" << endl;
+		}else if (peter_muerto && stark_muerto == false){
+			cout << "No quiero irme, Sr. Stark!" << endl;
+		}else if ( (peter_muerto && stark_muerto) || (peter_muerto == false && stark_muerto == false) ){
+			cout << "No hay abrazo" << endl;
+		}
 	}
 }
