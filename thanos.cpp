@@ -30,5 +30,7 @@ int main () {
 			
 	}else if (peter_muerto && stark_muerto == false){
 		cout << "No quiero irme, Sr. Stark!"
+	}else if ( (peter_muerto && stark_muerto) || (peter_muerto == false && stark_muerto == false) ){
+		cout << "No hay abrazo" << endl;
 	}
 }
