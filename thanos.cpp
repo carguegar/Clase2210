@@ -12,4 +12,12 @@ int main () {
 	}else {
 		num_muertes = num_personas / 2 +1;
 	}
+	for (int i = 0; i < num_muertes; i++){
+		for (int j = num_saltos + 1; ; j += num_saltos + 1){//posición que mato
+			if (j > num_personas){
+				j = j - num_personas;
+			}
+
+		}
+	}
 }
