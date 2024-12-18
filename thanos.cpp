@@ -8,10 +8,10 @@ int main () {
 	cin >> num_casos;
 	for (int i = 0; i < num_casos; i++){
 		cin >> num_personas >> pos_stark >> pos_peter >> num_saltos;
-		num_muertes = num_personas / 2 + 1;
+		num_muertes = num_personas / 2;
 		stark_muerto = false;
 		peter_muerto = false;
-		for (int j = num_saltos + 1; num_personas >= num_muertes; j += num_saltos){//posición que mato
+		for (int j = num_saltos + 1; num_personas > num_muertes; j += num_saltos){//posición que mato
 			if (j > num_personas){
 				j = j - num_personas;
 			}if (j == pos_stark){
