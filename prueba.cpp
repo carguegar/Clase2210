@@ -8,7 +8,7 @@ using namespace std;
 int main () {
 	int numero_casos = 1, equipos = 1, repesca, numero, numero_real, plazas, plazas_totales, j = 0, i=0;
 	bool error_equipos = false, error_simbolo = false, error_federacion1 = false, error_federacion2 = false, error_federacion3 = false, error_federacion4 = false, error_federacion5 = false, error_federacion6 = false;
-
+	bool simbolo;
 	do {//bucle de datos
 		numero = cin.get();
 		if (numero >= '0' && numero <= '9'){
@@ -21,32 +21,33 @@ int main () {
 		j = 0;
 		do{
 			numero_real = 0;
+			simbolo = false;
 			do {//bucle de datos
 				numero = cin.get();
 				if (numero >= '0' && numero <= '9'){
 					numero_real = numero_real * 10 + (numero - '0');
 				}else if (numero != ' ' && numero != '\n'){
-					numero_real = -725774;
+					simbolo = true;
 				}
 			} while (numero != ' ' && numero != '\n');
-			if (numero_real == -725774){
+			if (simbolo){
 				error_simbolo = true;
 			}
-			if (numero_real == -725774 && j == 0){
+			if (simbolo && j == 0){
 				error_equipos = true;
 			}else if (j == 0){
 				equipos = numero_real;
-			}else if(j == 1 && numero_real == -725774){
+			}else if(j == 1 && simbolo){
 				error_federacion1 = true;
-			}else if(j == 2 && numero_real == -725774){
+			}else if(j == 2 && simbolo){
 				error_federacion2 = true;
-			}else if(j == 3 && numero_real == -725774){
+			}else if(j == 3 && simbolo){
 				error_federacion3 = true;
-			}else if(j == 4 && numero_real == -725774){
+			}else if(j == 4 && simbolo){
 				error_federacion4 = true;
-			}else if(j == 5 && numero_real == -725774){
+			}else if(j == 5 && simbolo){
 				error_federacion5 = true;
-			}else if(j == 6 && numero_real == -725774){
+			}else if(j == 6 && simbolo){
 				error_federacion6 = true;
 			}else{
 				plazas = numero_real;
@@ -97,3 +98,24 @@ int main () {
 	}while(i < numero_casos);
 		
 }
+
+3
+3
+122
+0
+
+3
+ERROR: Demasiados equipos
+ERROR: No hay suficientes equipos
+ERROR: Demasiadas federaciones
+
+3
+ERROR: Demasiados equipos
+ERROR: Plazas superadas
+
+3
+ERROR: Demasiados equipos
+ERROR: No hay suficientes equipos
+ERROR: Plazas superadas
+ERROR: Demasiadas federaciones
+ERROR: Simbolos erroneos detectados en: el número de equipos la federación CONMEBOL la federación OFC 
