@@ -98,24 +98,3 @@ int main () {
 	}while(i < numero_casos);
 		
 }
-
-3
-3
-122
-0
-
-3
-ERROR: Demasiados equipos
-ERROR: No hay suficientes equipos
-ERROR: Demasiadas federaciones
-
-3
-ERROR: Demasiados equipos
-ERROR: Plazas superadas
-
-3
-ERROR: Demasiados equipos
-ERROR: No hay suficientes equipos
-ERROR: Plazas superadas
-ERROR: Demasiadas federaciones
-ERROR: Simbolos erroneos detectados en: el número de equipos la federación CONMEBOL la federación OFC 
